@@ -223,10 +223,7 @@ npx playwright install chromium
 npx playwright test
 ```
 
-This starts both the backend and the frontend dev server automatically
-(see `playwright.config.ts` / `e2e/start-backend.cjs`) — you don't need
-either running beforehand.
-
+This starts both the backend and the frontend dev server automatically using `playwright.config.ts`; you don't need either running beforehand.
 ## Using the Application
 
 1. Open `http://localhost:5173`. The dashboard shows service counts by
@@ -390,9 +387,8 @@ Verified against a running backend + frontend:
   trusted internal network.
 - Consider making the booking-conflict rule duration-aware rather than
   exact-timestamp-only, if real scheduling needs it.
-- Stage 4 documentation set (this README plus `docs/`) and Stage 5+
-  deliverables (presentation deck, demo video) — presentation deck and
-  video are outstanding as of this writing.
+- Presentation deck is included in `presentation/`.
+- Demo video provided as a public link in the final submission/README.
 
 ## Unresolved Issues
 
