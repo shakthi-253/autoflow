@@ -1,0 +1,123 @@
+============================= test session starts ==============================
+platform linux -- Python 3.12.3, pytest-9.1.1, pluggy-1.6.0 -- /home/claude/autoflow/backend/venv/bin/python
+cachedir: .pytest_cache
+Using --randomly-seed=2960890904
+rootdir: /home/claude/autoflow/backend
+configfile: pytest.ini
+testpaths: tests
+plugins: randomly-4.1.0, anyio-4.14.2
+collecting ... collected 91 items
+
+tests/api/test_edge_cases.py::test_repeated_status_transition_calls_are_idempotently_rejected PASSED [  1%]
+tests/api/test_edge_cases.py::test_issue_description_at_exact_max_length_is_accepted PASSED [  2%]
+tests/api/test_edge_cases.py::test_get_nonexistent_service_returns_404 PASSED [  3%]
+tests/api/test_edge_cases.py::test_dashboard_stats_on_empty_database PASSED [  4%]
+tests/api/test_edge_cases.py::test_registration_number_minimum_valid_length PASSED [  5%]
+tests/api/test_edge_cases.py::test_get_service_with_zero_id_returns_404_not_error PASSED [  6%]
+tests/api/test_edge_cases.py::test_registration_number_maximum_valid_length PASSED [  7%]
+tests/api/test_edge_cases.py::test_get_nonexistent_vehicle_returns_404 PASSED [  8%]
+tests/api/test_edge_cases.py::test_multiple_services_for_same_vehicle_different_dates_allowed PASSED [  9%]
+tests/api/test_edge_cases.py::test_list_services_on_empty_database_returns_empty_list PASSED [ 10%]
+tests/api/test_edge_cases.py::test_appointment_date_at_exact_maximum_boundary_is_accepted PASSED [ 12%]
+tests/api/test_edge_cases.py::test_contact_number_with_leading_plus_is_accepted PASSED [ 13%]
+tests/api/test_edge_cases.py::test_contact_number_minimum_valid_length PASSED [ 14%]
+tests/api/test_edge_cases.py::test_service_type_is_case_sensitive_enum PASSED [ 15%]
+tests/api/test_edge_cases.py::test_contact_number_maximum_valid_length PASSED [ 16%]
+tests/api/test_edge_cases.py::test_appointment_date_at_exact_minimum_boundary_is_accepted PASSED [ 17%]
+tests/api/test_edge_cases.py::test_get_service_with_negative_id_returns_404 PASSED [ 18%]
+tests/api/test_booking_conflict.py::test_conflict_blocked_while_existing_service_in_inspection PASSED [ 19%]
+tests/api/test_booking_conflict.py::test_booking_same_timestamp_allowed_after_previous_service_cancelled PASSED [ 20%]
+tests/api/test_booking_conflict.py::test_first_booking_succeeds PASSED   [ 21%]
+tests/api/test_booking_conflict.py::test_conflicting_booking_does_not_create_a_second_service PASSED [ 23%]
+tests/api/test_booking_conflict.py::test_non_conflicting_booking_different_vehicle_same_timestamp_is_allowed PASSED [ 24%]
+tests/api/test_booking_conflict.py::test_booking_same_timestamp_allowed_after_previous_service_completed PASSED [ 25%]
+tests/api/test_booking_conflict.py::test_conflict_blocked_while_existing_service_in_repair PASSED [ 26%]
+tests/api/test_booking_conflict.py::test_conflicting_booking_same_vehicle_same_timestamp_is_rejected PASSED [ 27%]
+tests/api/test_booking_conflict.py::test_non_conflicting_booking_different_timestamp_is_allowed PASSED [ 28%]
+tests/api/test_vehicles.py::test_get_vehicle_by_id PASSED                [ 29%]
+tests/api/test_vehicles.py::test_creating_vehicle_twice_with_same_registration_returns_existing PASSED [ 30%]
+tests/api/test_vehicles.py::test_create_vehicle_returns_201_and_persisted_fields PASSED [ 31%]
+tests/api/test_vehicles.py::test_registration_number_is_normalized_to_uppercase PASSED [ 32%]
+tests/api/test_vehicles.py::test_list_vehicles_returns_created_vehicle PASSED [ 34%]
+tests/api/test_validation.py::test_empty_string_field_returns_422[issue_description-] PASSED [ 35%]
+tests/api/test_validation.py::test_invalid_service_type_returns_422 PASSED [ 36%]
+tests/api/test_validation.py::test_invalid_registration_number_returns_422[TN 09 AB!] PASSED [ 37%]
+tests/api/test_validation.py::test_empty_string_field_returns_422[vehicle_model-] PASSED [ 38%]
+tests/api/test_validation.py::test_invalid_contact_number_format_returns_422[12345] PASSED [ 39%]
+tests/api/test_validation.py::test_invalid_contact_number_format_returns_422[123-456-7890] PASSED [ 40%]
+tests/api/test_validation.py::test_invalid_contact_number_format_returns_422[abcdefg] PASSED [ 41%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[vehicle_model] PASSED [ 42%]
+tests/api/test_validation.py::test_owner_name_over_max_length_returns_422 PASSED [ 43%]
+tests/api/test_validation.py::test_empty_string_field_returns_422[registration_number-] PASSED [ 45%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[service_type] PASSED [ 46%]
+tests/api/test_validation.py::test_invalid_registration_number_returns_422[AB1] PASSED [ 47%]
+tests/api/test_validation.py::test_invalid_data_type_for_field_returns_422 PASSED [ 48%]
+tests/api/test_validation.py::test_appointment_date_far_in_future_returns_422 PASSED [ 49%]
+tests/api/test_validation.py::test_invalid_contact_number_format_returns_422[1234567890123456] PASSED [ 50%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[contact_number] PASSED [ 51%]
+tests/api/test_validation.py::test_invalid_request_does_not_create_a_service PASSED [ 52%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[registration_number] PASSED [ 53%]
+tests/api/test_validation.py::test_vehicle_model_over_max_length_returns_422 PASSED [ 54%]
+tests/api/test_validation.py::test_empty_string_field_returns_422[contact_number-] PASSED [ 56%]
+tests/api/test_validation.py::test_invalid_date_format_returns_422 PASSED [ 57%]
+tests/api/test_validation.py::test_invalid_contact_number_format_returns_422[++911234567890] PASSED [ 58%]
+tests/api/test_validation.py::test_empty_string_field_returns_422[owner_name-] PASSED [ 59%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[appointment_date] PASSED [ 60%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[owner_name] PASSED [ 61%]
+tests/api/test_validation.py::test_malformed_json_body_returns_422 PASSED [ 62%]
+tests/api/test_validation.py::test_get_service_with_non_integer_id_returns_422 PASSED [ 63%]
+tests/api/test_validation.py::test_appointment_date_before_minimum_returns_422 PASSED [ 64%]
+tests/api/test_validation.py::test_issue_description_over_max_length_returns_422 PASSED [ 65%]
+tests/api/test_validation.py::test_invalid_registration_number_returns_422[AAAAAAAAAAAAAAAAAAAAA] PASSED [ 67%]
+tests/api/test_validation.py::test_missing_required_field_returns_422[issue_description] PASSED [ 68%]
+tests/api/test_status_transitions.py::test_valid_transition_succeeds[INSPECTION-REPAIR] PASSED [ 69%]
+tests/api/test_status_transitions.py::test_status_transition_with_invalid_status_value_returns_422 PASSED [ 70%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[REPAIR-INSPECTION] PASSED [ 71%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[INSPECTION-BOOKED] PASSED [ 72%]
+tests/api/test_status_transitions.py::test_valid_transition_succeeds[INSPECTION-CANCELLED] PASSED [ 73%]
+tests/api/test_status_transitions.py::test_valid_transition_succeeds[BOOKED-INSPECTION] PASSED [ 74%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[COMPLETED-REPAIR] PASSED [ 75%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[INSPECTION-COMPLETED] PASSED [ 76%]
+tests/api/test_status_transitions.py::test_valid_transition_succeeds[REPAIR-COMPLETED] PASSED [ 78%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[CANCELLED-REPAIR] PASSED [ 79%]
+tests/api/test_status_transitions.py::test_valid_transition_succeeds[BOOKED-CANCELLED] PASSED [ 80%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[BOOKED-BOOKED] PASSED [ 81%]
+tests/api/test_status_transitions.py::test_repeated_identical_status_update_from_terminal_state_is_rejected PASSED [ 82%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[REPAIR-BOOKED] PASSED [ 83%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[CANCELLED-COMPLETED] PASSED [ 84%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[COMPLETED-CANCELLED] PASSED [ 85%]
+tests/api/test_status_transitions.py::test_status_transition_on_nonexistent_service_returns_404 PASSED [ 86%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[BOOKED-COMPLETED] PASSED [ 87%]
+tests/api/test_status_transitions.py::test_invalid_transition_is_rejected[BOOKED-REPAIR] PASSED [ 89%]
+tests/api/test_services.py::test_updated_at_changes_after_status_transition PASSED [ 90%]
+tests/api/test_services.py::test_create_service_returns_201_with_booked_status PASSED [ 91%]
+tests/api/test_services.py::test_cancellation_from_booked PASSED         [ 92%]
+tests/api/test_services.py::test_full_happy_path_booked_to_completed PASSED [ 93%]
+tests/api/test_services.py::test_cancellation_from_inspection PASSED     [ 94%]
+tests/api/test_services.py::test_dashboard_stats_reflect_created_service PASSED [ 95%]
+tests/api/test_services.py::test_dashboard_stats_reflect_status_change PASSED [ 96%]
+tests/api/test_services.py::test_list_services_returns_created_service PASSED [ 97%]
+tests/api/test_services.py::test_create_service_creates_the_vehicle_implicitly PASSED [ 98%]
+tests/api/test_services.py::test_get_service_by_id_returns_full_details PASSED [100%]
+
+=============================== warnings summary ===============================
+app/main.py:34
+  /home/claude/autoflow/backend/app/main.py:34: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    @app.on_event("startup")
+
+venv/lib/python3.12/site-packages/fastapi/applications.py:4495
+  /home/claude/autoflow/backend/venv/lib/python3.12/site-packages/fastapi/applications.py:4495: DeprecationWarning: 
+          on_event is deprecated, use lifespan event handlers instead.
+  
+          Read more about it in the
+          [FastAPI docs for Lifespan Events](https://fastapi.tiangolo.com/advanced/events/).
+          
+    return self.router.on_event(event_type)
+
+-- Docs: https://docs.pytest.org/en/stable/how-to/capture-warnings.html
+======================== 91 passed, 2 warnings in 2.38s ========================
