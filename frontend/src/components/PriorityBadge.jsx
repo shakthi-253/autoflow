@@ -7,7 +7,7 @@ export default function PriorityBadge({ priority }) {
     bg: "var(--panel-alt)",
   };
   return (
-    <span className="status-badge" style={{ color: meta.color, background: meta.bg }}>
+    <span className="priority-badge" style={{ color: meta.color, background: meta.bg }}>
       <span className="status-dot" />
       {meta.label}
     </span>
