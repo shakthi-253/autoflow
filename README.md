@@ -4,7 +4,7 @@
 automated test suite generated and executed with a deliberate red run,
 and a new feature (Service Priority Classification) implemented and
 verified through an AI-assisted implement → test → diagnose → correct
-loop. Stage 4 documentation (this set) is in progress.
+loop. Stage 4 and 5 are completed.
 
 ## AI Tools Used
 
@@ -30,7 +30,8 @@ loop. Stage 4 documentation (this set) is in progress.
 - [`docs/ai-testing-log.md`](docs/ai-testing-log.md) — Stage 2 AI test-generation record
 - [`docs/ai-change-loop.md`](docs/ai-change-loop.md) — Stage 3 AI change-loop record, including the Playwright regression and fix
 - [`docs/testing.md`](docs/testing.md) — Stage 2 deliberate backend red-run demonstration, plus current final test counts
-
+- https://docs.google.com/presentation/d/1HydIAmq0ctzEeXMrgWjj6nHUm9x0aNTR/edit?usp=sharing&ouid=115264623081132680250&rtpof=true&sd=true - Stage 4 Presentation
+- https://drive.google.com/file/d/18TxeACmtoHK7FSoMkJgorMdt5k8XQ5Cd/view?usp=sharing - Stage 5 Demo Video
 ## What is AutoFlow?
 
 AutoFlow is a web application for a vehicle service center to manage a
